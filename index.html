@@ -29,11 +29,11 @@
       return <h1>{createTitle(title)}</h1>;
     }
     
-    ReactDOM.render(<Header />, app);
+    ReactDOM.render(<Header/>, app);
 
     function HomePage() {
       const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
-    
+     
       return (
         <div>
           <Header title="Develop. Preview. Ship. 🚀" />
@@ -45,7 +45,7 @@
         </div>
       );
     }
-    ReactDOM.render(<HomePage />, app);
+    ReactDOM.render(<HomePage />, <Header />);
 
     // const header = document.createElement('header');
 
