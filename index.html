@@ -17,22 +17,35 @@
 
   <script type="text/jsx">
 
-    //함수 안에 태그를 작성해두어 다른 함수에 참조 하여 불러 들인다.
-    function Header() {
-      return <h1>Develop. Preview. Ship. 🚀</h1>;
+    function createTitle(title) {
+      if (title) {
+        return title;
+      } else {
+        return 'React 💙';
+      }
     }
-    // 함수를 부를 때 태그 형태로 불러 값을 사용 하여 div 자식으로 만들어 준다.
+    
+    function Header({ title }) {
+      return <h1>{createTitle(title)}</h1>;
+    }
+    
+    ReactDOM.render(<Header />, app);
+
     function HomePage() {
+      const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+    
       return (
         <div>
-          <Header />
+          <Header title="Develop. Preview. Ship. 🚀" />
+          <ul>
+            {names.map((name) => (
+              <li key={name}>{name}</li>
+            ))}
+          </ul>
         </div>
       );
     }
-    
     ReactDOM.render(<HomePage />, app);
-
-
 
     // const header = document.createElement('header');
 
