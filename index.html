@@ -17,14 +17,22 @@
 
   <script type="text/jsx">
 
-
-    const app = document.getElementById("app")
-
+    //함수 안에 태그를 작성해두어 다른 함수에 참조 하여 불러 들인다.
     function Header() {
       return <h1>Develop. Preview. Ship. 🚀</h1>;
     }
+    // 함수를 부를 때 태그 형태로 불러 값을 사용 하여 div 자식으로 만들어 준다.
+    function HomePage() {
+      return (
+        <div>
+          <Header />
+        </div>
+      );
+    }
     
-    ReactDOM.render(<Header />, app);
+    ReactDOM.render(<HomePage />, app);
+
+
 
     // const header = document.createElement('header');
 
